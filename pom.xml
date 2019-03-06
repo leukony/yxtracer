@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.yunxi.common</groupId>
-	<artifactId>yx-tracer</artifactId>
+	<artifactId>yx-common-tracer</artifactId>
 	<version>3.0.0</version>
 	<packaging>jar</packaging>
-	<name>yx-tracer</name>
+	<name>yx-common-tracer</name>
 
 	<dependencies>
 		<!-- ================================================= -->
@@ -13,7 +13,7 @@
      	<!-- ================================================= -->
 		<dependency>
 			<groupId>com.yunxi.common</groupId>
-			<artifactId>yx-lang</artifactId>
+			<artifactId>yx-common-lang</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
