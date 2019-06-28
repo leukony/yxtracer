@@ -26,6 +26,14 @@ public enum TracerLogger {
                       TimedRollingFileAppender.HOURLY_ROLLING_PATTERN,
                       TimedRollingFileAppender.DEFAULT_RESERVE_DAY),
 
+    SCHEDULER_SEND_DIGEST("scheduler_send_digest", "schedulersend-digest.log",
+                          TimedRollingFileAppender.HOURLY_ROLLING_PATTERN,
+                          TimedRollingFileAppender.DEFAULT_RESERVE_DAY),
+
+    SCHEDULER_RECEIVE_DIGEST("scheduler_receive_digest", "schedulerreceive-digest.log",
+                             TimedRollingFileAppender.HOURLY_ROLLING_PATTERN,
+                             TimedRollingFileAppender.DEFAULT_RESERVE_DAY),
+
     ;
 
     /** 日志名称 */

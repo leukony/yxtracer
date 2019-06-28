@@ -13,12 +13,18 @@ public enum TracerType {
 
     /** HTTPServer日志 */
     HTTP_SERVER('2'),
-    
+
     /** RPCClient日志 */
     RPC_CLIENT('3'),
 
     /** RPCServer日志 */
-    RPC_SERVER('4'), ;
+    RPC_SERVER('4'),
+
+    /** SCHEDULERSend日志 */
+    SCHEDULER_SEND('5'),
+
+    /** SCHEDULERReceive日志 */
+    SCHEDULER_RECEIVE('6'), ;
 
     private char type;
 
@@ -34,7 +40,7 @@ public enum TracerType {
     public char getType() {
         return type;
     }
-    
+
     /**
      * 根据类型获取TracerType
      * @param type

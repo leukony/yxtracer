@@ -2,6 +2,7 @@ package com.yunxi.common.tracer;
 
 import com.yunxi.common.tracer.tracer.HttpTracer;
 import com.yunxi.common.tracer.tracer.RpcTracer;
+import com.yunxi.common.tracer.tracer.SchedulerTracer;
 
 /**
  * Tracer工厂
@@ -11,13 +12,17 @@ import com.yunxi.common.tracer.tracer.RpcTracer;
  */
 public class TracerFactory {
 
-    private static volatile HttpTracer httpClientTracer;
+    private static volatile HttpTracer      httpClientTracer;
 
-    private static volatile HttpTracer httpServerTracer;
+    private static volatile HttpTracer      httpServerTracer;
 
-    private static volatile RpcTracer  rpcClientTracer;
+    private static volatile RpcTracer       rpcClientTracer;
 
-    private static volatile RpcTracer  rpcServerTracer;
+    private static volatile RpcTracer       rpcServerTracer;
+
+    private static volatile SchedulerTracer schedulerSendTracer;
+
+    private static volatile SchedulerTracer schedulerReceiveTracer;
 
     public static HttpTracer getHttpClientTracer() {
         if (httpClientTracer == null) {
@@ -61,5 +66,27 @@ public class TracerFactory {
             }
         }
         return rpcServerTracer;
+    }
+
+    public static SchedulerTracer getSchedulerSendTracer() {
+        if (schedulerSendTracer == null) {
+            synchronized (TracerFactory.class) {
+                if (schedulerSendTracer == null) {
+                    schedulerSendTracer = new SchedulerTracer();
+                }
+            }
+        }
+        return schedulerSendTracer;
+    }
+
+    public static SchedulerTracer getSchedulerReceiveTracer() {
+        if (schedulerReceiveTracer == null) {
+            synchronized (TracerFactory.class) {
+                if (schedulerReceiveTracer == null) {
+                    schedulerReceiveTracer = new SchedulerTracer();
+                }
+            }
+        }
+        return schedulerReceiveTracer;
     }
 }
